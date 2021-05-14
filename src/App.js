@@ -8,6 +8,7 @@ import '@fontsource/roboto';
 // Material UI Components
 import {
   AppBar,
+  Box,
   Button,
   Card,
   CardActionArea,
@@ -63,14 +64,21 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     height: '12.5%',
     width: '12.5%',
   },
+  slide: {
+    position: 'relative',
+    margin: 'auto',
+    overflow: 'hidden',
+    width: '100%',
+    maxHeight: '80vh'
+  },
   slideImage: {
-    opacity: "50%",
-    width: "100%",
-    display: "block",
-    margin: "auto",
+    opacity: "25%",
+    width: '150%',
+    marginLeft: '-25vw',
+    marginTop: '-25vw',
   },
   thumbnail: {
-    height: "100%",
+    eight: "100%",
     width: "100%",
   }
 
@@ -84,11 +92,11 @@ const Header = () => {
     <AppBar className={classes.appbar} position="fixed">  
       <Toolbar>
         <img src={logo} className={classes.logo} alt="Grange Hall 39"/>
-        <Link to="home" smooth={true}><Button><Typography className={classes.link}>Home</Typography></Button></Link>
-        <Link to="about" smooth={true}><Button><Typography className={classes.link}>About</Typography></Button></Link>
-        <Link to="partners" smooth={true}><Button><Typography className={classes.link}>Our Partners</Typography></Button></Link>
-        <Link to="apply" smooth={true}><Button><Typography className={classes.link}>Become A Partner</Typography></Button></Link>
-        <Link to="contact" smooth={true}><Button><Typography className={classes.link}>Contact</Typography></Button></Link>
+        <Link to="home" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Home</Box></Typography></Button></Link>
+        <Link to="about" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>About</Box></Typography></Button></Link>
+        <Link to="partners" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Our Partners</Box></Typography></Button></Link>
+        <Link to="apply" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Become A Partner</Box></Typography></Button></Link>
+        <Link to="contact" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Contact Us</Box></Typography></Button></Link>
       </Toolbar>
     </AppBar>
   );
@@ -106,7 +114,9 @@ function ArtisanCard(props) {
 
   return (
     <Card style={{backgroundColor: props.color}} className={classes.card}>
-      <img src={props.artisan.image} style={{width: "100%", height: "100%"}}/>
+      <CardActionArea>
+        <img src={props.artisan.image} style={{width: "100%", height: "100%"}}/>
+      </CardActionArea>
     </Card>
   );
 }
@@ -121,36 +131,31 @@ function Partners() {
   }
 
   return (
-    <div>
-      <Typography variant="h3">
-        Our Artisan Partners
-      </Typography>
-      <Container style={{height: "50px"}}/>
+    <Container maxWidth="lg">
+      <Container style={{height: "150px"}}/>
+      <Typography variant="h3"><Box fontWeight="bold">OUR ARTISAN PARTNERS</Box></Typography>
+      <Container style={{height: "150px"}}/>
       <Grid container>
-        <Grid container item md={1} lg={2}/>
-        <Grid container item xs={12} md={10} lg={8}>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
-          </Grid>
-          <Grid item xs={6} sm={4}>
-            <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
-          </Grid>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
         </Grid>
-        <Grid container item md={1} lg={2}/>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
+        </Grid>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
+        </Grid>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
+        </Grid>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="#383434"/>
+        </Grid>
+        <Grid item xs={6} sm={4}>
+          <ArtisanCard artisan={artisans.BurgerMonster} color="white"/>
+        </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 }
 
@@ -158,39 +163,43 @@ const About = () => {
   const classes = useStyles();
 
   return (
-    <Container style={{maxWidth: "85vw"}} alignItems="center">
-      <Typography variant="h3">THROWBACKS TO THE PAST TO BRING YOU THE FUTURE OF BUENA PARK DINING</Typography>
-      <Container style={{height: "50px"}}/>
-      <Grid container spacing={10}>
-        <Grid container item xs={12} sm={4} justify="center">
-          <List>
-            <img src={hamburger} className={classes.icon}/>
-            <h2>EAT</h2>
-            <Divider/>
-            <p>Grange Hall 39 highlights an artisan collection of the area's brightest culinary talent & fresh, local ingredients</p>
-          </List>
+    <Container maxWidth="false" style={{backgroundColor: '#ece6cc'}} alignItems="center">
+      <Container style={{height: "150px"}}/>
+      <Typography variant="h3"><Box fontWeight="bold">THE FUTURE OF BUENA PARK DINING</Box></Typography>
+      <Container style={{height: "150px"}}/>
+      <Container maxWidth="lg">
+        <Grid container spacing={5}>
+          <Grid container item xs={12} sm={4} justify="center">
+            <List>
+              <img src={hamburger} className={classes.icon}/>
+              <h2>EAT</h2>
+              <Divider/>
+              <p>Grange Hall 39 highlights an artisan collection of the area's brightest culinary talent & fresh, local ingredients</p>
+            </List>
+          </Grid>
+          <Grid container item xs={12} sm={4} justify="center">
+            <List>
+              <img src={drink} className={classes.icon}/>
+              <h2>DRINK</h2>
+              <Divider/>
+              <p>Honoring the rich agricultural history
+                of Buena Park & modeled after the
+                communal halls where farmers would
+                gather in the early 1900s</p>
+            </List>
+          </Grid>
+          <Grid container item xs={12} sm={4} justify="center">
+            <List>
+              <img src={chill} className={classes.icon}/>
+              <h2>CHILL</h2>
+              <Divider/>
+              <p>Unique fare with exciting social dining
+                experience along with entertainment</p>
+            </List>
+          </Grid>
         </Grid>
-        <Grid container item xs={12} sm={4} justify="center">
-          <List>
-            <img src={drink} className={classes.icon}/>
-            <h2>DRINK</h2>
-            <Divider/>
-            <p>Honoring the rich agricultural history
-              of Buena Park & modeled after the
-              communal halls where farmers would
-              gather in the early 1900s</p>
-          </List>
-        </Grid>
-        <Grid container item xs={12} sm={4}>
-          <List>
-            <img src={chill} className={classes.icon}/>
-            <h2>CHILL</h2>
-            <Divider/>
-            <p>Unique fare with exciting social dining
-              experience along with entertainment</p>
-          </List>
-        </Grid>
-      </Grid>
+      </Container>
+      <Container style={{height: "150px"}}/>
     </Container>
   );
 }
@@ -200,7 +209,7 @@ const Home = () => {
   const classes = useStyles();
 
   const properties = {
-    duration: 200,
+    duration: 2500,
     autoplay: true,
     transitionDuration: 2500,
     arrows: false,
@@ -215,12 +224,12 @@ const Home = () => {
   ];
 
   return (
-    <div style={{backgroundColor: 'black'}}>
-      <div className="slide-container">
+    <div style={{backgroundColor: 'black', maxHeight: '1250px'}}>
+      <div>
         <Fade {...properties}>
           {images.map((each, index) => (
-            <div key={index}>
-              <img position="absolute" className={classes.slideImage} src={each} alt="Banner"/>
+            <div key={index} className={classes.slide}>
+              <img className={classes.slideImage} src={each} alt="Banner"/>
             </div>
           ))}
         </Fade>
@@ -238,9 +247,9 @@ function App() {
         <img src={banner} alt="Eat at Grange Hall 39!" style={{width: "100%", height: "100%"}}/>
       </Container> */}
       <Home/>
-      <a id="about"/><Container style={{height: "100px"}}/>
+      <a id="about"/>
       <About/>
-      <a id="partners"/><Container style={{height: "100px"}}/>
+      <a id="partners"/>
       <Partners/>
     </div>
   );
