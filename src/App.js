@@ -39,6 +39,7 @@ import img2 from './assets/img/slideshow/img2.jpg';
 import img3 from './assets/img/slideshow/img3.jpg';
 
 
+//CSS stuff
 const useStyles = makeStyles((theme: Theme) => createStyles({
   appbar: {
     alignItems: 'center',
@@ -87,6 +88,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 }));
 
+//Menu Bar
 const Header = () => {
   const classes = useStyles();
 
@@ -105,6 +107,7 @@ const Header = () => {
   );
 }
 
+//Artisan Constructor
 class Artisan {
   constructor(image, link) {
     this.image = image;
@@ -112,6 +115,7 @@ class Artisan {
   }
 }
 
+//Some detail of ArtisanCard
 function ArtisanCard(props) {
   const classes = useStyles();
 
@@ -124,6 +128,7 @@ function ArtisanCard(props) {
   );
 }
 
+//Partners
 function Partners() {
 
   const artisans = {
@@ -162,6 +167,7 @@ function Partners() {
   );
 }
 
+//About
 const About = () => {
   const classes = useStyles();
 
@@ -207,6 +213,7 @@ const About = () => {
   );
 }
 
+// Banner
 const Home = () => {
 
   const classes = useStyles();
@@ -265,7 +272,7 @@ const Home = () => {
               opacity={[0, 1]}
               scale={[.75, 1]}
               delay={1500}>
-                Chill</Anime>
+                Chill • </Anime>
           </Box>
         </Typography>
         </Container>
@@ -273,6 +280,24 @@ const Home = () => {
   );
 }
 
+const BecomePartner = () =>
+{
+  const classes = useStyles();
+
+  return (
+    <Container maxWidth = "false" style = {{backgroundColor: '#ece6cc'}} alignItems = "center">
+      <Container style = {{height: "100px"}}>
+        <Container maxWidth = "lg">
+          Hello
+
+        </Container>
+
+      </Container>
+    </Container>
+  );
+}
+
+//Main 
 function App() {
   return (
     <div className="App">
@@ -286,6 +311,8 @@ function App() {
       <About/>
       <a id="partners"/>
       <Partners/>
+      <BecomePartner/>
+      <a id = "becomePartners"/>
     </div>
   );
 }
