@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/GrangeHall39/static/css/main.6ab79e07.chunk.css",
+    "main.js": "/GrangeHall39/static/js/main.00f4ec58.chunk.js",
+    "main.js.map": "/GrangeHall39/static/js/main.00f4ec58.chunk.js.map",
+    "runtime-main.js": "/GrangeHall39/static/js/runtime-main.4a305a93.js",
+    "runtime-main.js.map": "/GrangeHall39/static/js/runtime-main.4a305a93.js.map",
+    "static/css/2.d85665ba.chunk.css": "/GrangeHall39/static/css/2.d85665ba.chunk.css",
+    "static/js/2.1aebd7bb.chunk.js": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js",
+    "static/js/2.1aebd7bb.chunk.js.map": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js.map",
+    "static/js/3.92832c0d.chunk.js": "/GrangeHall39/static/js/3.92832c0d.chunk.js",
+    "static/js/3.92832c0d.chunk.js.map": "/GrangeHall39/static/js/3.92832c0d.chunk.js.map",
+    "index.html": "/GrangeHall39/index.html",
+    "static/css/2.d85665ba.chunk.css.map": "/GrangeHall39/static/css/2.d85665ba.chunk.css.map",
+    "static/css/main.6ab79e07.chunk.css.map": "/GrangeHall39/static/css/main.6ab79e07.chunk.css.map",
+    "static/js/2.1aebd7bb.chunk.js.LICENSE.txt": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js.LICENSE.txt",
+    "static/media/chill.063b999f.svg": "/GrangeHall39/static/media/chill.063b999f.svg",
+    "static/media/drink.b5575f2a.svg": "/GrangeHall39/static/media/drink.b5575f2a.svg",
+    "static/media/hamburger.32251dd2.svg": "/GrangeHall39/static/media/hamburger.32251dd2.svg",
+    "static/media/img1.ce316f92.jpg": "/GrangeHall39/static/media/img1.ce316f92.jpg",
+    "static/media/img2.8b605daf.jpg": "/GrangeHall39/static/media/img2.8b605daf.jpg",
+    "static/media/img3.cf1bc4b1.jpg": "/GrangeHall39/static/media/img3.cf1bc4b1.jpg",
+    "static/media/partner-bkg.38dbdf63.jpg": "/GrangeHall39/static/media/partner-bkg.38dbdf63.jpg",
+    "static/media/partner1.24566ad1.png": "/GrangeHall39/static/media/partner1.24566ad1.png",
+    "static/media/partner2.ecebd75d.png": "/GrangeHall39/static/media/partner2.ecebd75d.png",
+    "static/media/partner3.b72d51dd.png": "/GrangeHall39/static/media/partner3.b72d51dd.png",
+    "static/media/partner4.3c53c4b3.png": "/GrangeHall39/static/media/partner4.3c53c4b3.png",
+    "static/media/partner5.9e541929.png": "/GrangeHall39/static/media/partner5.9e541929.png",
+    "static/media/index.css": "/GrangeHall39/static/media/raleway-vietnamese-400-normal.41f91bf2.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4a305a93.js",
+    "static/css/2.d85665ba.chunk.css",
+    "static/js/2.1aebd7bb.chunk.js",
+    "static/css/main.6ab79e07.chunk.css",
+    "static/js/main.00f4ec58.chunk.js"
+  ]
+}
