@@ -44,3 +44,9 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
+.title2 {
+  position: absolute;
+  top: 25%;
+  z-index: 1;
+}
