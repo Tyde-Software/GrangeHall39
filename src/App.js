@@ -85,11 +85,14 @@ const useStyles = makeStyles((theme) => createStyles({
     backgroundColor: 'black',
     maxHeight: '80vh',
     minHeight: '20vh',
+    maxWidth: '100vw',
     position: 'relative',
   },
   dialogImage: {
-    width: '100%',
-    height: '100%',
+    width: 'auto',
+    height: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
   drawer: {
     backgroundColor: '#383434',
@@ -151,7 +154,7 @@ const Header = () => {
       {/* Desktop AppBar */}
 
       <Hidden smDown>
-        <AppBar className={classes.appbar} position="fixed"> 
+        <AppBar className={classes.appbar} position="fixed" style={{maxWidth: '100vw'}}> 
           <Toolbar>
             <img src={logo} className={classes.logo} alt="Grange Hall 39"/>
             <Link to="home" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Home</Box></Typography></Button></Link>
@@ -165,7 +168,7 @@ const Header = () => {
       {/* Mobile AppBar */}
 
       <Hidden mdUp>
-        <AppBar position="fixed" style={{backgroundColor: '#383434'}}>
+        <AppBar position="fixed" style={{backgroundColor: '#383434', maxWidth: '100vw'}}>
           <Toolbar style={{justifyContent: 'space-between'}}>
             <IconButton edge="start" color="inherit" onClick={handleDrawerOpen} aria-label="menu">
               <MenuIcon style={{color: 'white'}}/>
@@ -222,7 +225,7 @@ function ArtisanCard(props) {
   const classes = useStyles();
 
   return (
-    <div>
+    <Container maxWidth="false" style={{maxWidth: '100vw'}}>
       <Button onClick={handleClickOpen} className={classes.card}>
         <img src={props.artisan.image} style={{width: "100%", height: "100%"}}/>
       </Button>
@@ -232,19 +235,19 @@ function ArtisanCard(props) {
           <Grid container direction="row">
             <Grid item container xs={12} sm={4} align="center" justify="center">
               <Grid container>
-                <Grid item xs={12}>
-                  <img className={classes.dialogImage} src={props.artisan.image}/>
-                </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={12}/>
+                <Grid item xs={12} position="fixed">
+                  <Container maxWidth="xs">
+                    <img className={classes.dialogImage} src={props.artisan.image}/>
+                  </Container>
                   <Typography variant="body1"><Box fontWeight='bold' color='black'>Hours: {props.artisan.hours}</Box></Typography>
                   <Container/>
                   <Typography variant="body1"><Box fontWeight='bold' color='black'>Contact: {props.artisan.hours}</Box></Typography>
-                </Grid>
-                <Grid item xs={12}>
                   {props.artisan.instagram != "TBA" || props.artisan.website != "TBA" ? <Container style={{height: '20px'}}/> : null}
                   {props.artisan.instagram != "TBA" ? <a href={props.artisan.instagram} target="_blank" rel="noreferrer noopener"><IconButton><InstagramIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
                   {props.artisan.website != "TBA" ? <a href={props.artisan.website} target="_blank" rel="noreferrer noopener"><IconButton><LinkIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
                 </Grid>
+                <Grid item xs={12}/>
               </Grid>  
             </Grid>
             <Hidden smUp>
@@ -259,7 +262,7 @@ function ArtisanCard(props) {
           <Container style={{height: '20px'}}/>
         </DialogContent>
       </Dialog>
-    </div>
+    </Container>
   );
 }
 
@@ -348,7 +351,7 @@ function Partners() {
   }
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" style={{maxWidth: '100vw'}}>
       <Container style={{height: "100px"}}/>
       <Typography variant="h3"><Box fontWeight="bold">OUR ARTISAN PARTNERS</Box></Typography>
       <Container style={{height: "100px"}}/>
@@ -362,15 +365,17 @@ function Partners() {
         <Grid item xs={6} sm={4}>
           <ArtisanCard artisan={artisans.EggSlice}/>
         </Grid>
+        <Grid item xs={0} sm={2}/>
         <Grid item xs={6} sm={4}>
           <ArtisanCard artisan={artisans.PitaGrill}/>
         </Grid>
+        <Hidden smUp>
+          <Grid item xs={3}/>
+        </Hidden>
         <Grid item xs={6} sm={4}>
           <ArtisanCard artisan={artisans.PhoDessert}/>
         </Grid>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.BurgerMonster}/>
-        </Grid>
+        <Grid item xs={3} sm={2}/>
       </Grid>
       <Container style={{height: "100px"}}/>
     </Container>
@@ -382,7 +387,7 @@ const About = () => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth="false" style={{backgroundColor: '#ece6cc'}} alignItems="center">
+    <Container maxWidth="false" style={{backgroundColor: '#ece6cc', maxWidth: '100vw'}} alignItems="center">
       <Container style={{height: "100px"}}/>
       <Typography className={classes.title} variant="h3"><Box>The Future Of Buena Park Dining</Box></Typography>
       <Container style={{height: "100px"}}/>
@@ -463,31 +468,22 @@ const Home = () => {
          duration={500}
          opacity={[0, 1]}
          >
-          <Typography variant="h1"><Box fontWeight="bold" color="white">GRANGE HALL 39</Box></Typography>
+           <Hidden xsDown>
+            <Typography variant="h1"><Box fontWeight="bold" color="white">GRANGE HALL 39</Box></Typography>
+          </Hidden>
+          <Hidden smUp>
+            <Typography variant="h2"><Box fontWeight="bold" color="white">GRANGE HALL 39</Box></Typography>
+          </Hidden>
         </Anime>
         <Container style={{height: '72px'}}/>
-        <Typography variant="h2">
-          <Box fontWeight="bold" color="white">
-            <Anime easing="linear"
-              duration={500}
-              opacity={[0, 1]}
-              scale={[.75, 1]}
-              delay={500}>
-                Eat • </Anime>
-            <Anime easing="linear"
-              duration={500}
-              opacity={[0, 1]}
-              scale={[.75, 1]}
-              delay={1000}>
-                Drink • </Anime>
-            <Anime easing="linear"
-              duration={500}
-              opacity={[0, 1]}
-              scale={[.75, 1]}
-              delay={1500}>
-                Chill • </Anime>
-          </Box>
-        </Typography>
+        <Anime easing="linear" duration={500} opacity={[0, 1]} scale={[.75, 1]} delay={500}>
+          <Hidden xsDown>
+            <Typography variant="h2" style={{display: 'inline-block'}}><Box fontWeight="bold" color="white">Eat • Drink • Chill</Box></Typography>
+          </Hidden>
+          <Hidden smUp>
+            <Typography variant="h3" style={{display: 'inline-block'}}><Box fontWeight="bold" color="white">Eat • Drink • Chill</Box></Typography>
+          </Hidden>
+        </Anime>
         </Container>
     </Container>
   );
@@ -498,7 +494,7 @@ const BecomePartner = () =>
   const classes = useStyles();
 
   return (
-    <Container maxWidth = "false" alignItems = "center" style={{backgroundColor: 'black'}}>
+    <Container maxWidth = "false" alignItems = "center" style={{backgroundColor: 'black', maxWidth: '100vw'}}>
       <Container style = {{height: "100px"}}/>
       <Grid container>
         <Grid item container xs={0} md={1}/>
@@ -526,11 +522,10 @@ const BecomePartner = () =>
 }
 
 const Contact = () => {
-  const classes = useStyles();
   return (
-    <Container maxWidth = "false" style = {{backgroundColor: '#161616'}}>
+    <Container maxWidth="false" style={{backgroundColor: '#161616', maxWidth: '100vw'}}>
       <Container  style = {{height: "100px"}}/>
-      <Grid container spacing={5}>
+      <Grid container spacing={4}>
         <Grid item container xs = {12} md = {4} justify="center">
           <Typography variant = "h3"><Box fontWeight = "bold" color="white">VISIT US</Box></Typography>
           <Container style={{height: '20px'}}/>
@@ -562,8 +557,9 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className="App">
+        <Container disableGutters={true} style={{maxWidth: '100vw'}} className="App">
           <a id="home"/>
+          <Container style={{height: 50}}/>
           <Header/>
           <Home/>
           <a id="about"/>
@@ -573,7 +569,7 @@ class App extends React.Component {
           <a id="contact"/>
           <BecomePartner/>
           <Contact/>
-        </div>
+        </Container>
       </ThemeProvider>
     );
   }
