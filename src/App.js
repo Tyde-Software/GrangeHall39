@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import "react-slideshow-image/dist/styles.css";
 import logo from './assets/img/logo.png';
+import logoext from './assets/img/logo_ext.png'
 import '@fontsource/raleway';
 
 // Material UI Components
@@ -173,7 +174,7 @@ const Header = () => {
             <IconButton edge="start" color="inherit" onClick={handleDrawerOpen} aria-label="menu">
               <MenuIcon style={{color: 'white'}}/>
             </IconButton>
-            <img src={logo} style={{height: '12.5%', width: '12.5%'}} alt="Grange Hall 39"/>
+            <img src={logo} style={{height: '20%', width: '20%'}} alt="Grange Hall 39"/>
             <IconButton disabled={true}/>
           </Toolbar>
         </AppBar>
@@ -465,7 +466,7 @@ const Home = () => {
       <Container disableGutters={true} className="title">
         <Anime easing="linear" duration={500} opacity={[0, 1]} delay={500}>
           <Container maxWidth="md">
-            <img src={logo} alt="Grange Hall 39" style={{height: '50%', width: '50%'}}/>
+            <img src={logoext} alt="Grange Hall 39" style={{height: '100%', width: '100%'}}/>
           </Container>
         </Anime>
         <Container style={{height: '72px'}}/>
