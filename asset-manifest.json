@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GrangeHall39/static/css/main.3b8b728c.chunk.css",
-    "main.js": "/GrangeHall39/static/js/main.9cd62bf2.chunk.js",
-    "main.js.map": "/GrangeHall39/static/js/main.9cd62bf2.chunk.js.map",
+    "main.js": "/GrangeHall39/static/js/main.ace83d4e.chunk.js",
+    "main.js.map": "/GrangeHall39/static/js/main.ace83d4e.chunk.js.map",
     "runtime-main.js": "/GrangeHall39/static/js/runtime-main.fe630d7a.js",
     "runtime-main.js.map": "/GrangeHall39/static/js/runtime-main.fe630d7a.js.map",
     "static/css/2.d85665ba.chunk.css": "/GrangeHall39/static/css/2.d85665ba.chunk.css",
@@ -21,11 +21,11 @@
     "static/media/img2.8b605daf.jpg": "/GrangeHall39/static/media/img2.8b605daf.jpg",
     "static/media/img3.cf1bc4b1.jpg": "/GrangeHall39/static/media/img3.cf1bc4b1.jpg",
     "static/media/partner-bkg.38dbdf63.jpg": "/GrangeHall39/static/media/partner-bkg.38dbdf63.jpg",
-    "static/media/partner1.24566ad1.png": "/GrangeHall39/static/media/partner1.24566ad1.png",
-    "static/media/partner2.ecebd75d.png": "/GrangeHall39/static/media/partner2.ecebd75d.png",
-    "static/media/partner3.b72d51dd.png": "/GrangeHall39/static/media/partner3.b72d51dd.png",
-    "static/media/partner4.3c53c4b3.png": "/GrangeHall39/static/media/partner4.3c53c4b3.png",
-    "static/media/partner5.9e541929.png": "/GrangeHall39/static/media/partner5.9e541929.png",
+    "static/media/partner1.259a427d.png": "/GrangeHall39/static/media/partner1.259a427d.png",
+    "static/media/partner2.31785094.png": "/GrangeHall39/static/media/partner2.31785094.png",
+    "static/media/partner3.1755ff9c.png": "/GrangeHall39/static/media/partner3.1755ff9c.png",
+    "static/media/partner4.d60f0859.png": "/GrangeHall39/static/media/partner4.d60f0859.png",
+    "static/media/partner5.8d61a076.png": "/GrangeHall39/static/media/partner5.8d61a076.png",
     "static/media/index.css": "/GrangeHall39/static/media/raleway-vietnamese-400-normal.41f91bf2.woff2"
   },
   "entrypoints": [
@@ -33,6 +33,6 @@
     "static/css/2.d85665ba.chunk.css",
     "static/js/2.78ebaa17.chunk.js",
     "static/css/main.3b8b728c.chunk.css",
-    "static/js/main.9cd62bf2.chunk.js"
+    "static/js/main.ace83d4e.chunk.js"
   ]
 }
