@@ -16,6 +16,7 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
+  Drawer,
   Grid,
   Hidden,
   IconButton,
@@ -38,6 +39,7 @@ import Anime from 'react-anime';
 import hamburger from './assets/icons/hamburger.svg';
 import drink from './assets/icons/drink.svg';
 import chill from './assets/icons/chill.svg';
+import MenuIcon from '@material-ui/icons/Menu'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkIcon from '@material-ui/icons/Link';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -87,6 +89,10 @@ const useStyles = makeStyles((theme) => createStyles({
   },
   dialogImage: {
     width: '100%',
+    height: '100%',
+  },
+  drawer: {
+    backgroundColor: '#383434',
   },
   icon: {
     height: '30%',
@@ -126,19 +132,66 @@ const useStyles = makeStyles((theme) => createStyles({
 
 //Menu Bar
 const Header = () => {
-  const classes = useStyles();
 
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
   return (
-    <AppBar className={classes.appbar} position="fixed">  
-      <Toolbar>
-        <img src={logo} className={classes.logo} alt="Grange Hall 39"/>
-        <Link to="home" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Home</Box></Typography></Button></Link>
-        <Link to="about" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>About</Box></Typography></Button></Link>
-        <Link to="partners" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Our Partners</Box></Typography></Button></Link>
-        <Link to="contact" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Contact Us</Box></Typography></Button></Link>
-      </Toolbar>
-    </AppBar>
+    <>
+
+      {/* Desktop AppBar */}
+
+      <Hidden smDown>
+        <AppBar className={classes.appbar} position="fixed"> 
+          <Toolbar>
+            <img src={logo} className={classes.logo} alt="Grange Hall 39"/>
+            <Link to="home" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Home</Box></Typography></Button></Link>
+            <Link to="about" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>About</Box></Typography></Button></Link>
+            <Link to="partners" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Our Partners</Box></Typography></Button></Link>
+            <Link to="contact" smooth={true}><Button><Typography className={classes.link}><Box fontWeight="bold" letterSpacing={1}>Contact Us</Box></Typography></Button></Link>
+          </Toolbar>
+        </AppBar>
+      </Hidden>
+      
+      {/* Mobile AppBar */}
+
+      <Hidden mdUp>
+        <AppBar position="fixed" style={{backgroundColor: '#383434'}}>
+          <Toolbar style={{justifyContent: 'space-between'}}>
+            <IconButton edge="start" color="inherit" onClick={handleDrawerOpen} aria-label="menu">
+              <MenuIcon style={{color: 'white'}}/>
+            </IconButton>
+            <img src={logo} style={{height: '12.5%', width: '12.5%'}} alt="Grange Hall 39"/>
+            <IconButton disabled={true}/>
+          </Toolbar>
+        </AppBar>
+        <Drawer open={open} classes={{paper: classes.drawer}} onClose={handleDrawerClose}>
+          <Container maxWidth="xs" style={{marginTop: 15}}>
+            <img src={logo} style={{width: '100%'}}/>
+          </Container>
+          <Container align="center">
+            <Container style={{height: '50px'}}/>
+            <Link to="home" smooth={true} style={{ textDecoration: 'none' }}><Button onClick={handleDrawerClose}><Typography variant="h5"><Box letterSpacing='3px' color='white'>Home</Box></Typography></Button></Link>
+            <Container style={{height: '10px'}}/>
+            <Link to="about" smooth={true} style={{ textDecoration: 'none' }}><Button onClick={handleDrawerClose}><Typography variant="h5"><Box letterSpacing='3px' color='white'>About</Box></Typography></Button></Link>
+            <Container style={{height: '10px'}}/>
+            <Link to="partners" smooth={true} style={{ textDecoration: 'none' }}><Button onClick={handleDrawerClose}><Typography variant="h5"><Box letterSpacing='3px' color='white'>Our Partners</Box></Typography></Button></Link>
+            <Container style={{height: '10px'}}/>
+            <Link to="contact" smooth={true} style={{ textDecoration: 'none' }}><Button onClick={handleDrawerClose}><Typography variant="h5"><Box letterSpacing='3px' color='white'>Contact</Box></Typography></Button></Link>
+          </Container>
+        </Drawer>
+      </Hidden>
+    </>
+    
   );
 }
 
@@ -178,14 +231,21 @@ function ArtisanCard(props) {
           <Container style={{height: '20px'}}/>
           <Grid container direction="row">
             <Grid item container xs={12} sm={4} align="center" justify="center">
-              <img className={classes.dialogImage} src={props.artisan.image}/>
-              <Container style={{height: '20px'}}/>
-              <Typography variant="body1"><Box fontWeight='bold' color='black'>Hours: {props.artisan.hours}</Box></Typography>
-              <Container/>
-              <Typography variant="body1"><Box fontWeight='bold' color='black'>Contact: {props.artisan.hours}</Box></Typography>
-              {props.artisan.instagram != "TBA" || props.artisan.website != "TBA" ? <Container style={{height: '20px'}}/> : null}
-              {props.artisan.instagram != "TBA" ? <a href={props.artisan.instagram} target="_blank" rel="noreferrer noopener"><IconButton><InstagramIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
-              {props.artisan.website != "TBA" ? <a href={props.artisan.website} target="_blank" rel="noreferrer noopener"><IconButton><LinkIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
+              <Grid container>
+                <Grid item xs={12}>
+                  <img className={classes.dialogImage} src={props.artisan.image}/>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="body1"><Box fontWeight='bold' color='black'>Hours: {props.artisan.hours}</Box></Typography>
+                  <Container/>
+                  <Typography variant="body1"><Box fontWeight='bold' color='black'>Contact: {props.artisan.hours}</Box></Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  {props.artisan.instagram != "TBA" || props.artisan.website != "TBA" ? <Container style={{height: '20px'}}/> : null}
+                  {props.artisan.instagram != "TBA" ? <a href={props.artisan.instagram} target="_blank" rel="noreferrer noopener"><IconButton><InstagramIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
+                  {props.artisan.website != "TBA" ? <a href={props.artisan.website} target="_blank" rel="noreferrer noopener"><IconButton><LinkIcon fontSize="large" style={{color: 'black'}}/></IconButton></a> : null}
+                </Grid>
+              </Grid>  
             </Grid>
             <Hidden smUp>
               <Grid item container xs={12}>
