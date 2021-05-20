@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GrangeHall39/static/css/main.1fa1d01b.chunk.css",
-    "main.js": "/GrangeHall39/static/js/main.fb4f32f9.chunk.js",
-    "main.js.map": "/GrangeHall39/static/js/main.fb4f32f9.chunk.js.map",
+    "main.js": "/GrangeHall39/static/js/main.5d7fab33.chunk.js",
+    "main.js.map": "/GrangeHall39/static/js/main.5d7fab33.chunk.js.map",
     "runtime-main.js": "/GrangeHall39/static/js/runtime-main.fe630d7a.js",
     "runtime-main.js.map": "/GrangeHall39/static/js/runtime-main.fe630d7a.js.map",
     "static/css/2.d85665ba.chunk.css": "/GrangeHall39/static/css/2.d85665ba.chunk.css",
@@ -33,6 +33,6 @@
     "static/css/2.d85665ba.chunk.css",
     "static/js/2.78ebaa17.chunk.js",
     "static/css/main.1fa1d01b.chunk.css",
-    "static/js/main.fb4f32f9.chunk.js"
+    "static/js/main.5d7fab33.chunk.js"
   ]
 }
