@@ -10,12 +10,8 @@ import {
   AppBar,
   Box,
   Button,
-  ButtonBase,
-  Card,
-  CardActionArea,
   Container,
   Dialog,
-  DialogActions,
   DialogContent,
   Drawer,
   Grid,
@@ -81,6 +77,9 @@ const useStyles = makeStyles((theme) => createStyles({
     padding:0,
     minHeight: 0,
     minWidth: 0,
+    // "&:hover": {
+    //   backgroundColor: "#FFF"
+    // }
   },
   carousel: {
     backgroundColor: 'black',
@@ -227,7 +226,7 @@ function ArtisanCard(props) {
 
   return (
     <Container maxWidth="false" style={{maxWidth: '100vw'}}>
-      <Button onClick={handleClickOpen} className={classes.card}>
+      <Button disableElevation={true} onClick={handleClickOpen} className={classes.card}>
         <img src={props.artisan.image} style={{width: "100%", height: "100%"}}/>
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth={true} maxWidth="lg" style={{maxHeight: '80vh'}}>
@@ -352,32 +351,34 @@ function Partners() {
   }
 
   return (
-    <Container maxWidth="lg" style={{maxWidth: '100vw', backgroundColor: 'white'}}>
+    <Container maxWidth="false" style={{backgroundColor: 'white'}}>
       <Container style={{height: "100px"}}/>
       <Typography variant="h3"><Box fontWeight="bold">OUR ARTISAN PARTNERS</Box></Typography>
       <Container style={{height: "100px"}}/>
-      <Grid container>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.BurgerMonster}/>
+      <Container maxWidth="lg">
+        <Grid container spacing={0}>
+          <Grid item xs={6} sm={4}>
+            <ArtisanCard artisan={artisans.BurgerMonster}/>
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <ArtisanCard artisan={artisans.ChubbeeMonkee}/>
+          </Grid>
+          <Grid item xs={6} sm={4}>
+            <ArtisanCard artisan={artisans.EggSlice}/>
+          </Grid>
+          <Grid item xs={0} sm={2}/>
+          <Grid item xs={6} sm={4}>
+            <ArtisanCard artisan={artisans.PitaGrill}/>
+          </Grid>
+          <Hidden smUp>
+            <Grid item xs={3}/>
+          </Hidden>
+          <Grid item xs={6} sm={4}>
+            <ArtisanCard artisan={artisans.PhoDessert}/>
+          </Grid>
+          <Grid item xs={3} sm={2}/>
         </Grid>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.ChubbeeMonkee}/>
-        </Grid>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.EggSlice}/>
-        </Grid>
-        <Grid item xs={0} sm={2}/>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.PitaGrill}/>
-        </Grid>
-        <Hidden smUp>
-          <Grid item xs={3}/>
-        </Hidden>
-        <Grid item xs={6} sm={4}>
-          <ArtisanCard artisan={artisans.PhoDessert}/>
-        </Grid>
-        <Grid item xs={3} sm={2}/>
-      </Grid>
+      </Container>
       <Container style={{height: "100px"}}/>
     </Container>
   );
