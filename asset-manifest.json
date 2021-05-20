@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/GrangeHall39/static/css/main.6ab79e07.chunk.css",
-    "main.js": "/GrangeHall39/static/js/main.00f4ec58.chunk.js",
-    "main.js.map": "/GrangeHall39/static/js/main.00f4ec58.chunk.js.map",
-    "runtime-main.js": "/GrangeHall39/static/js/runtime-main.4a305a93.js",
-    "runtime-main.js.map": "/GrangeHall39/static/js/runtime-main.4a305a93.js.map",
+    "main.css": "/GrangeHall39/static/css/main.1fa1d01b.chunk.css",
+    "main.js": "/GrangeHall39/static/js/main.b25ee7b9.chunk.js",
+    "main.js.map": "/GrangeHall39/static/js/main.b25ee7b9.chunk.js.map",
+    "runtime-main.js": "/GrangeHall39/static/js/runtime-main.fe630d7a.js",
+    "runtime-main.js.map": "/GrangeHall39/static/js/runtime-main.fe630d7a.js.map",
     "static/css/2.d85665ba.chunk.css": "/GrangeHall39/static/css/2.d85665ba.chunk.css",
-    "static/js/2.1aebd7bb.chunk.js": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js",
-    "static/js/2.1aebd7bb.chunk.js.map": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js.map",
-    "static/js/3.92832c0d.chunk.js": "/GrangeHall39/static/js/3.92832c0d.chunk.js",
-    "static/js/3.92832c0d.chunk.js.map": "/GrangeHall39/static/js/3.92832c0d.chunk.js.map",
+    "static/js/2.55274a71.chunk.js": "/GrangeHall39/static/js/2.55274a71.chunk.js",
+    "static/js/2.55274a71.chunk.js.map": "/GrangeHall39/static/js/2.55274a71.chunk.js.map",
+    "static/js/3.38031e75.chunk.js": "/GrangeHall39/static/js/3.38031e75.chunk.js",
+    "static/js/3.38031e75.chunk.js.map": "/GrangeHall39/static/js/3.38031e75.chunk.js.map",
     "index.html": "/GrangeHall39/index.html",
     "static/css/2.d85665ba.chunk.css.map": "/GrangeHall39/static/css/2.d85665ba.chunk.css.map",
-    "static/css/main.6ab79e07.chunk.css.map": "/GrangeHall39/static/css/main.6ab79e07.chunk.css.map",
-    "static/js/2.1aebd7bb.chunk.js.LICENSE.txt": "/GrangeHall39/static/js/2.1aebd7bb.chunk.js.LICENSE.txt",
+    "static/css/main.1fa1d01b.chunk.css.map": "/GrangeHall39/static/css/main.1fa1d01b.chunk.css.map",
+    "static/js/2.55274a71.chunk.js.LICENSE.txt": "/GrangeHall39/static/js/2.55274a71.chunk.js.LICENSE.txt",
     "static/media/chill.063b999f.svg": "/GrangeHall39/static/media/chill.063b999f.svg",
     "static/media/drink.b5575f2a.svg": "/GrangeHall39/static/media/drink.b5575f2a.svg",
     "static/media/hamburger.32251dd2.svg": "/GrangeHall39/static/media/hamburger.32251dd2.svg",
@@ -29,10 +29,10 @@
     "static/media/index.css": "/GrangeHall39/static/media/raleway-vietnamese-400-normal.41f91bf2.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.4a305a93.js",
+    "static/js/runtime-main.fe630d7a.js",
     "static/css/2.d85665ba.chunk.css",
-    "static/js/2.1aebd7bb.chunk.js",
-    "static/css/main.6ab79e07.chunk.css",
-    "static/js/main.00f4ec58.chunk.js"
+    "static/js/2.55274a71.chunk.js",
+    "static/css/main.1fa1d01b.chunk.css",
+    "static/js/main.b25ee7b9.chunk.js"
   ]
 }
