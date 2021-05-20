@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => createStyles({
     maxHeight: '80vh',
   },
   slideImage: {
-    opacity: "25%",
+    opacity: "15%",
     width: '150%',
     marginLeft: '-25vw',
     marginTop: '-25vw',
@@ -389,7 +389,7 @@ const About = () => {
   return (
     <Container maxWidth="false" style={{backgroundColor: '#ece6cc', maxWidth: '100vw'}} alignItems="center">
       <Container style={{height: "100px"}}/>
-      <Typography className={classes.title} variant="h3"><Box>The Future Of Buena Park Dining</Box></Typography>
+      <Typography className={classes.title} variant="h3"><Box>THE FUTURE OF BUENA PARK DINING</Box></Typography>
       <Container style={{height: "100px"}}/>
       <Container maxWidth="lg">
         <Grid container spacing={5}>
@@ -463,20 +463,13 @@ const Home = () => {
         </Fade>
       </Container>
       <Container disableGutters={true} className="title">
-        <Anime
-        easing="linear"
-         duration={500}
-         opacity={[0, 1]}
-         >
-           <Hidden xsDown>
-            <Typography variant="h1"><Box fontWeight="bold" color="white">GRANGE HALL 39</Box></Typography>
-          </Hidden>
-          <Hidden smUp>
-            <Typography variant="h2"><Box fontWeight="bold" color="white">GRANGE HALL 39</Box></Typography>
-          </Hidden>
+        <Anime easing="linear" duration={500} opacity={[0, 1]} delay={500}>
+          <Container maxWidth="md">
+            <img src={logo} alt="Grange Hall 39" style={{height: '50%', width: '50%'}}/>
+          </Container>
         </Anime>
         <Container style={{height: '72px'}}/>
-        <Anime easing="linear" duration={500} opacity={[0, 1]} scale={[.75, 1]} delay={500}>
+        <Anime easing="linear" duration={500} opacity={[0, 1]} scale={[.75, 1]} delay={1000}>
           <Hidden xsDown>
             <Typography variant="h2" style={{display: 'inline-block'}}><Box fontWeight="bold" color="white">Eat • Drink • Chill</Box></Typography>
           </Hidden>
