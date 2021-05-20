@@ -352,7 +352,7 @@ function Partners() {
   }
 
   return (
-    <Container maxWidth="lg" style={{maxWidth: '100vw'}}>
+    <Container maxWidth="lg" style={{maxWidth: '100vw', backgroundColor: 'white'}}>
       <Container style={{height: "100px"}}/>
       <Typography variant="h3"><Box fontWeight="bold">OUR ARTISAN PARTNERS</Box></Typography>
       <Container style={{height: "100px"}}/>
