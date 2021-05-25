@@ -100,15 +100,7 @@ const useStyles = makeStyles((theme) => createStyles({
   drawer: {
     backgroundColor: '#383434',
   },
-  font: {
-    position: 'absolute',
-    top: '20%',
-    width: '100%',
-    textAlign: "center",
-    color: "black",
-    backgroundColor: "none",
-    fontFamily: "Comic Sans MS"
-  },
+ 
   icon: {
     height: '30%',
     width: '30%',
@@ -123,9 +115,7 @@ const useStyles = makeStyles((theme) => createStyles({
     height: '12.5%',
     width: '12.5%',
   },
-  root: {
-    position: 'relative'
-  },
+
   slide: {
     margin: 'auto',
     overflow: 'hidden',
@@ -506,26 +496,10 @@ const BecomePartner = () =>
   return (
     <Container maxWidth = "false" alignItems = "center" style={{/*backgroundColor: 'black',*/ maxWidth: '100vw'}}>
       <Container style = {{height: "100px"}}/>
-      <Card className = {classes.root}>
-        <CardMedia
-          component = "img"
-          alt = "Partner Background"
-          height = "600"
-          image = {partnerBackground}
-          title = "Partner Background"
-        />
+      <img src = {partnerBackground} alt = "Partner Background"/>
 
-        <Typography
-          gutterBottom
-          variant = "h1"
-          component = "h1"
-          className = {classes.font}
-        >
-          Hello
-        </Typography>
-
-      </Card>
-      {/* <Grid container>
+      
+      <Grid container>
         <Grid item container xs={0} md={1}/>
         <Grid item container xs={12} md={6} align="left">
 
@@ -544,8 +518,8 @@ const BecomePartner = () =>
         </Grid>
         <Grid item container xs={0} md={1}/>
         <Grid item container xs={0} md={6}/>
-      </Grid> */}
-      <Container style = {{height: "100px"}}/>
+      </Grid>
+      {/* <Container style = {{height: "100px"}}/> */}
     </Container>
   );
 }
