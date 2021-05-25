@@ -3,8 +3,8 @@ import React from 'react';
 import "react-slideshow-image/dist/styles.css";
 import logo from './assets/img/logo.png';
 import logoext from './assets/img/logo_ext.png'
-import partnerBackground from './assets/img/partner-bkg.jpg'
 import '@fontsource/raleway';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Material UI Components
 import {
@@ -55,7 +55,7 @@ import partner2 from './assets/img/partner2.png';
 import partner3 from './assets/img/partner3.png';
 import partner4 from './assets/img/partner4.png';
 import partner5 from './assets/img/partner5.png';
-import bkg from './assets/img/partner-bkg.jpg';
+import bkg from './assets/img/partner-bkg.png';
 
 
 // CSS stuff
@@ -80,9 +80,6 @@ const useStyles = makeStyles((theme) => createStyles({
     padding:0,
     minHeight: 0,
     minWidth: 0,
-    // "&:hover": {
-    //   backgroundColor: "#FFF"
-    // }
   },
   carousel: {
     backgroundColor: 'black',
@@ -115,7 +112,13 @@ const useStyles = makeStyles((theme) => createStyles({
     height: '12.5%',
     width: '12.5%',
   },
-
+  partnerWrapper: {
+    backgroundImage: 'url(' + bkg + ')',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    maxWidth: '100vw',
+  },
   slide: {
     margin: 'auto',
     overflow: 'hidden',
@@ -123,7 +126,7 @@ const useStyles = makeStyles((theme) => createStyles({
     maxHeight: '80vh',
   },
   slideImage: {
-    opacity: "15%",
+    opacity: "25%",
     width: '150%',
     marginLeft: '-25vw',
     marginTop: '-25vw',
@@ -478,10 +481,10 @@ const Home = () => {
         <Container style={{height: '72px'}}/>
         <Anime easing="linear" duration={500} opacity={[0, 1]} scale={[.75, 1]} delay={1000}>
           <Hidden xsDown>
-            <Typography variant="h2" style={{display: 'inline-block'}}><Box fontWeight="bold" color="white">Eat • Drink • Chill</Box></Typography>
+            <Typography variant="h2" style={{display: 'inline-block'}}><Box color="white">Eat • Drink • Chill</Box></Typography>
           </Hidden>
           <Hidden smUp>
-            <Typography variant="h3" style={{display: 'inline-block'}}><Box fontWeight="bold" color="white">Eat • Drink • Chill</Box></Typography>
+            <Typography variant="h3" style={{display: 'inline-block'}}><Box color="white">Eat • Drink • Chill</Box></Typography>
           </Hidden>
         </Anime>
         </Container>
@@ -494,32 +497,25 @@ const BecomePartner = () =>
   const classes = useStyles();
 
   return (
-    <Container maxWidth = "false" alignItems = "center" style={{/*backgroundColor: 'black',*/ maxWidth: '100vw'}}>
-      <Container style = {{height: "100px"}}/>
-      <img src = {partnerBackground} alt = "Partner Background"/>
-
-      
+    <Container maxWidth="false" disableGutters={true} className={classes.partnerWrapper}>
       <Grid container>
-        <Grid item container xs={0} md={1}/>
-        <Grid item container xs={12} md={6} align="left">
+        <Grid item container xs={1} xl={1}/>
+        <Grid item container xs={10} xl={6} align="left">
+        <Container style={{height: "100px"}}/>
+        <Typography variant="h3"><Box fontWeight="bold" color="white">NOW ACCEPTING EXCEPTIONAL CONCEPTS!</Box></Typography>
+        <Container style={{height: "100px"}}/>
 
-          <Typography variant="h3"><Box fontWeight="bold" color="white">NOW ACCEPTING </Box></Typography><p/>
-          <Typography variant="h3"><Box fontWeight="bold" color="white">EXCEPTIONAL CONCEPTS!</Box></Typography>
-          <Container style={{height: "100px"}}/>
+        <Typography variant="h5"><Box color="white">Do you own a restaurant or food truck that you're ready to take to the next level?</Box></Typography>
+        <Typography variant="h5"><Box color="white">Contact us to become a part of the future of Buena Park dining at Grange Hall 39!</Box></Typography>
 
-          <Typography variant="h5"><Box color="white">Do you own a restaurant or food truck that you're ready to take to the next level?</Box></Typography>
-          <Typography variant="h5"><Box color="white">Contact us to become a part of the future of Buena Park dining at Grange Hall 39!</Box></Typography>
-
-          <Typography variant="h5"><Box color="white">We'll set up a consultation about the requirements of becoming a tenant.</Box></Typography>
-          <Typography variant="h5"><Box color="white">We're looking for a mix of talented chef-owners to join us.</Box></Typography>
-
-          <Container style={{height: "100px"}}/>
-
+        <Typography variant="h5"><Box color="white">We'll set up a consultation about the requirements of becoming a tenant.</Box></Typography>
+        <Typography variant="h5"><Box color="white">We're looking for a mix of talented chef-owners to join us.</Box></Typography>
+        <Container style={{height: "100px"}}/>
+          
         </Grid>
-        <Grid item container xs={0} md={1}/>
-        <Grid item container xs={0} md={6}/>
+        <Grid item container xs={1} xl={1}/>
+        <Grid item container xs={0} xl={6}/>
       </Grid>
-      {/* <Container style = {{height: "100px"}}/> */}
     </Container>
   );
 }
