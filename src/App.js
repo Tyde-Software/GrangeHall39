@@ -124,13 +124,13 @@ const useStyles = makeStyles((theme) => createStyles({
     margin: 'auto',
     overflow: 'hidden',
     width: '100%',
-    maxHeight: '80vh',
+    maxHeight: '70vh',
   },
   slideImage: {
 
-    width: '150%',
-    marginLeft: '-25vw',
-    marginTop: '-25vw',
+    width: '100%',
+    // marginLeft: '-5vw',
+    marginTop: '-10vw',
   },
   thumbnail: {
     height: "100%",
