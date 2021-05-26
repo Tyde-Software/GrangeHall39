@@ -11,8 +11,6 @@ import {
   AppBar,
   Box,
   Button,
-  Card,
-  CardMedia,
   Container,
   Dialog,
   DialogContent,
@@ -48,6 +46,9 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import img1 from './assets/img/slideshow/img1.jpg';
 import img2 from './assets/img/slideshow/img2.jpg';
 import img3 from './assets/img/slideshow/img3.jpg';
+import img4 from './assets/img/slideshow/img4.jpg';
+import img5 from './assets/img/slideshow/img5.jpg';
+import img6 from './assets/img/slideshow/img6.jpg';
 
 // Partners
 import partner1 from './assets/img/partner1.png';
@@ -82,7 +83,7 @@ const useStyles = makeStyles((theme) => createStyles({
     minWidth: 0,
   },
   carousel: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
     maxHeight: '80vh',
     minHeight: '20vh',
     maxWidth: '100vw',
@@ -126,7 +127,7 @@ const useStyles = makeStyles((theme) => createStyles({
     maxHeight: '80vh',
   },
   slideImage: {
-    opacity: "25%",
+
     width: '150%',
     marginLeft: '-25vw',
     marginTop: '-25vw',
@@ -459,6 +460,9 @@ const Home = () => {
     img1,
     img2,
     img3,
+    img4,
+    img5,
+    img6
   ];
 
   return (
@@ -472,22 +476,7 @@ const Home = () => {
           ))}
         </Fade>
       </Container>
-      <Container disableGutters={true} className="title">
-        <Anime easing="linear" duration={500} opacity={[0, 1]} delay={500}>
-          <Container maxWidth="md">
-            <img src={logoext} alt="Grange Hall 39" style={{height: '100%', width: '100%'}}/>
-          </Container>
-        </Anime>
-        <Container style={{height: '72px'}}/>
-        <Anime easing="linear" duration={500} opacity={[0, 1]} scale={[.75, 1]} delay={1000}>
-          <Hidden xsDown>
-            <Typography variant="h2" style={{display: 'inline-block'}}><Box color="white">Eat • Drink • Chill</Box></Typography>
-          </Hidden>
-          <Hidden smUp>
-            <Typography variant="h3" style={{display: 'inline-block'}}><Box color="white">Eat • Drink • Chill</Box></Typography>
-          </Hidden>
-        </Anime>
-        </Container>
+
     </Container>
   );
 }
