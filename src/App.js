@@ -448,7 +448,7 @@ const Home = () => {
   const classes = useStyles();
 
   const properties = {
-    duration: 2500,
+    duration: 2800,
     autoplay: true,
     transitionDuration: 2500,
     arrows: false,
