@@ -2,7 +2,7 @@
   "name": "grangehall39",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tyde-software.github.io/GrangeHall39/",
+  "homepage": "https://tydesoftware.com/GrangeHall39/",
   "dependencies": {
     "@fontsource/raleway": "^4.3.0",
     "@material-ui/core": "^4.11.4",
@@ -36,7 +36,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
