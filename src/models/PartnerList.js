@@ -6,6 +6,7 @@ import PitaGrill from "../assets/img/PitaGrill.png";
 import SignaturePho from "../assets/img/SignaturePho.png";
 
 // Components
+import React from "react";
 import { Container, Typography } from "@material-ui/core";
 
 const PartnerList = [
