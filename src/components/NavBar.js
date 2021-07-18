@@ -101,7 +101,7 @@ const MobileAppBar = () => {
   const classes = useStyles();
 
   return (
-    <>
+    <div>
       <AppBar
         position="sticky"
         style={{ backgroundColor: "#383434", maxWidth: "100vw" }}
@@ -174,20 +174,20 @@ const MobileAppBar = () => {
           </Link>
         </Container>
       </Drawer>
-    </>
+    </div>
   );
 };
 
 const NavBar = () => {
   return (
-    <>
+    <div>
       <Hidden smDown>
         <DesktopAppBar />
       </Hidden>
       <Hidden mdUp>
         <MobileAppBar />
       </Hidden>
-    </>
+    </div>
   );
 };
 
